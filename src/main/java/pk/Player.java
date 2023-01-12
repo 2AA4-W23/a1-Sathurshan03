@@ -199,6 +199,12 @@ public class Player {
                 {
                     score += 4000;
                 }
+
+                //Reward points for rolling diamond and gold coins
+                if (Faces.values()[i].equals(Faces.DIAMOND) || Faces.values()[i].equals(Faces.GOLD))
+                {
+                    score += counter * 100;
+                }
             }
         }
     }

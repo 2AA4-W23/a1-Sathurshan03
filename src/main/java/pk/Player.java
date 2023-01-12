@@ -32,6 +32,7 @@ public class Player {
 
     public void turn(){
         numSkulls = 0;
+        score = 0;
         myDice.clear();
         currentDice.clear();
         skullDice.clear();
@@ -90,9 +91,13 @@ public class Player {
                 break;
             }
         }
+
+        calculateScore();
         
         System.out.println("\n-Final Values of the Dice-");
         printDice();
+        System.out.println("\nSCORE: " + score);
+
     }
     private Boolean continueTurn(){
         //Check if turn ends. Turn ends when there are 3 or more skulls in player dice set
@@ -144,5 +149,57 @@ public class Player {
             public int compare(Dice die1, Dice die2) {
                 return die1.getRollValue().compareTo(die2.getRollValue());
             }});
+    }
+
+    private void calculateScore()
+    {
+        //Calculate the player's score at the end of their turn
+        if (numSkulls >= 3)
+        {
+            score = 0;
+        }
+        
+        else 
+        {
+            //Atleast three in a row combo
+            int counter;
+            //iterate through each face except for the skull
+            for (int i = 0; i < 5; i++)
+            {
+                //count the number of dice that has that face
+                counter = 0;
+                for (Dice die:currentDice)
+                {
+                    if (die.getRollValue().equals(Faces.values()[i])){
+                        counter ++;
+                    }
+                }
+                //reward points based on the number of identical faces
+                if (counter == 3)
+                {
+                    score += 100;
+                }
+                else if (counter == 4)
+                {
+                    score += 200;
+                }
+                else if (counter == 5)
+                {
+                    score += 500;
+                }
+                else if (counter == 6)
+                {
+                    score += 1000;
+                }
+                else if (counter == 7)
+                {
+                    score += 2000;
+                }
+                else if (counter >= 8)
+                {
+                    score += 4000;
+                }
+            }
+        }
     }
 }

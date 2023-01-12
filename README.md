@@ -34,7 +34,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F03 | Run 42 games in simulation  |  D  |  01/12/23 | 01/12/23 |
 | x   | F04 | end of game with three cranes | D | 01/12/23 | 01/12/23 |
 | x   | F05 | Player keeping random number of dice at their turn | D | 01/12/23 | 01/12/23 | 
-| x   | F06 | Score points: 3-of-a-kind | B (F04) | | 
+| x   | F06 | Score points: 3 or more of a kind | D | 01/12/23 | 01/12/23 |
 | x   | F07 | Score points: gold coins and diamonds | B (F04) | | 
 | x   | F08 | Output percent wins at end of simulation | B (F04) | | 
 | ... | ... | ... |

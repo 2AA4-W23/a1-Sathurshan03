@@ -32,7 +32,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F01 | Roll a dice |  D | 01/12/23 | 01/12/23 |
 | x   | F02 | Roll eight dices  |  D | 01/12/23  | 01/12/23 |
 | x   | F03 | Run 42 games in simulation  |  P  |   |
-| x   | F04 | end of game with three cranes | P | |
+| x   | F04 | end of game with three cranes | D | 01/12/23 | 01/12/23 |
 | x   | F05 | Player keeping random number of dice at their turn | B (F02) | | 
 | x   | F06 | Score points: 3-of-a-kind | B (F04) | | 
 | x   | F07 | Score points: gold coins and diamonds | B (F04) | | 

@@ -23,7 +23,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
  * Status: 
    * Pending (P), Started (S), Blocked (B), Done (D)
  * Definition of Done (DoD):
-   * < Your DoD goes here >
+   * A feature is marked as "Done" whenever the implementation successfully satisfies the minimum requirement of that feature. The implemented feature must not alter the status and outcome of previously implemented features. 
 
 ### Backlog 
 
@@ -31,9 +31,11 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
 | x   | F01 | Roll a dice |  S | 01/01/23 |  |
 | x   | F02 | Roll eight dices  |  B (F01) |   |
-| x   | F03 | Select how many games as command-line arg.  |  P  |   |
+| x   | F03 | Run 42 games in simulation  |  P  |   |
 | x   | F04 | end of game with three cranes | P | |
-| x   | F05 | Player keeping random dice at their turn | B (F02) | | 
+| x   | F05 | Player keeping random number of dice at their turn | B (F02) | | 
 | x   | F06 | Score points: 3-of-a-kind | B (F04) | | 
+| x   | F07 | Score points: gold coins and diamonds | B (F04) | | 
+| x   | F08 | Output percent wins at end of simulation | B (F04) | | 
 | ... | ... | ... |
 

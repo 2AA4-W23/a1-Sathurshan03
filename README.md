@@ -29,14 +29,15 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 
 | MVP? | Id  | Feature  | Status  |  Started  | Delivered |
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
-| x   | F01 | Roll a dice |  D | 01/12/23 | 01/12/23 |
-| x   | F02 | Roll eight dices  |  D | 01/12/23  | 01/12/23 |
-| x   | F03 | Run 42 games in simulation  |  D  |  01/12/23 | 01/12/23 |
-| x   | F04 | end of game with three cranes | D | 01/12/23 | 01/12/23 |
-| x   | F05 | Player keeping random number of dice at their turn | D | 01/12/23 | 01/12/23 | 
-| x   | F06 | Score points: 3 or more of a kind | D | 01/12/23 | 01/12/23 |
-| x   | F07 | Score points: gold coins and diamonds | D | 01/12/23 | 01/12/23 | 
-| x   | F08 | Output percent wins at end of simulation | D | 01/12/23 | 01/12/23 |
-| x   | F09 | Have two players in simulation | D | 01/12/23 | 01/12/23 |
+| Y   | F01 | Roll a dice |  D | 01/12/23 | 01/12/23 |
+| Y   | F02 | Roll eight dices  |  D | 01/12/23  | 01/12/23 |
+|    | F03 | Run 42 games in simulation  |  D  |  01/12/23 | 01/12/23 |
+| Y   | F04 | end of game with three cranes | D | 01/12/23 | 01/12/23 |
+|    | F05 | Player keeping random number of dice at their turn | D | 01/12/23 | 01/12/23 | 
+| Y   | F06 | Score points: 3 or more of a kind | D | 01/12/23 | 01/12/23 |
+|    | F07 | Score points: gold coins and diamonds | D | 01/12/23 | 01/12/23 | 
+|    | F08 | Output percent wins at end of simulation | D | 01/12/23 | 01/12/23 |
+|    | F09 | Have two players in simulation | D | 01/12/23 | 01/12/23 |
+|    | F10 | Play a game until there is a winner | D | 01/12/23 | 01/12/23 |
 | ... | ... | ... |
 

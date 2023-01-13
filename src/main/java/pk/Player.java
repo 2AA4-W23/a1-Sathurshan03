@@ -43,9 +43,12 @@ public class Player {
         numWins++;
     }
 
+    public void resetScore(){
+        score = 0;
+    }
+
     public void turn(){
         numSkulls = 0;
-        score = 0;
         myDice.clear();
         currentDice.clear();
         skullDice.clear();
@@ -169,7 +172,7 @@ public class Player {
         //Calculate the player's score at the end of their turn
         if (numSkulls >= 3)
         {
-            score = 0;
+            score += 0;
         }
         
         else 

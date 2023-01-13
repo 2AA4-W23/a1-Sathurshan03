@@ -13,6 +13,7 @@ public class Player {
     int gamesWon;
     int score;
     int numSkulls;
+    int numWins;
     List <Dice> myDice = new ArrayList<>(); 
     List <Dice> currentDice = new ArrayList<>(); 
     List <Dice> skullDice = new ArrayList<>();
@@ -22,12 +23,25 @@ public class Player {
         gamesWon = 0;
         score = 0;
         numSkulls = 0;
+        numWins = 0;
     }
 
     public String getName(){
         return name;
     }
 
+    public int getScore(){
+        return score;
+    }
+
+    public int getNumWins(){
+        return numWins;
+    }
+
+    public void increaseNumWins()
+    {
+        numWins++;
+    }
 
     public void turn(){
         numSkulls = 0;

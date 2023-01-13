@@ -3,7 +3,6 @@ package pk;
 import java.util.Random;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -36,7 +35,7 @@ public class Player {
         myDice.clear();
         currentDice.clear();
         skullDice.clear();
-        System.out.println(name + " is rolling");
+        System.out.println("\n--" + name + " is rolling--");
 
         //Initial Roll
         for (int j = 0; j < 8; j++)

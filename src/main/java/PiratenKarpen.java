@@ -1,49 +1,17 @@
-import pk.Dice;
-import pk.Faces;
+import pk.Game;
 import pk.Player;
 
 public class PiratenKarpen {
 
     public static void main(String[] args) {
+        int totGames = 42;
         System.out.println("Welcome to Piraten Karpen Simulator!");
 
         Player player1 = new Player("player1");
         Player player2 = new Player("player2");
 
-        for (int i=0; i < 42; i++){
-            System.out.println("\n=======GAME " + (i+1) + "=======");
-            player1.resetScore();
-            player2.resetScore();
-
-            while (true){
-                player1.turn();
-                player2.turn();
-
-                //Determine winner of the game
-                if (player1.getScore() >= 6000 && player2.getScore() >= 6000)
-                {
-                    if (player1.getScore() > player2.getScore())
-                    {
-                        player1.increaseNumWins();
-                    }
-                    else if (player2.getScore() > player1.getScore()){
-                        player2.increaseNumWins();
-                    }
-                    else{
-                        player1.increaseNumWins();
-                        player2.increaseNumWins();
-                    }
-                    break;
-                }
-                else if (player1.getScore() >= 6000){
-                    player1.increaseNumWins();
-                    break;
-                }
-                else if (player2.getScore() >= 6000){
-                    player2.increaseNumWins();
-                    break;
-                }
-            }
+        for (int i=0; i < totGames; i++){
+            new Game((i+1), player1, player2).runGame();
         }
 
         double playerOneWins = (double)player1.getNumWins()/42*100;

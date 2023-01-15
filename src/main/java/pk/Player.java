@@ -58,9 +58,10 @@ public class Player {
         for (int j = 0; j < 8; j++)
         {
             myDice.add(new Dice());
-            System.out.println(myDice.get(j).getRollValue());
         }
         currentDice = myDice;
+        sortPlayerDice();
+        printDice();
 
         //Rerolls
         int numRolls = 1;
@@ -81,17 +82,32 @@ public class Player {
                 if (numReRoll != 0)
                 {
                     numReRoll++;
-                    List <Dice> rerolledDice = new ArrayList<>(); 
+                    List <Integer> pos = new ArrayList<>(); 
                     
-                    //randomly reroll the dice
-                    for(int k = 0; k < numReRoll; k++)
+                    //randomly find the positions of dice to re-roll
+                    for(int k = 0; k < numReRoll; )
                     {
-                        int pos = randomNumber.nextInt(numActiveDice--);
-                        rerolledDice.add(currentDice.get(pos));
-                        rerolledDice.get(k).roll();
-                        currentDice.remove(pos);
+                        int index = randomNumber.nextInt(numActiveDice);
+                        if (!(pos.contains((Integer)index))){
+                            pos.add((Integer)index);
+                            k++;
+                        }
                     }
-                    currentDice.addAll(rerolledDice);
+
+                    pos.sort(null);
+
+                    //Re-roll the dice 
+                    for (Integer m: pos){
+                        currentDice.get(m).roll();
+                    }
+
+
+                    //Print the specific dice that is getting rerolled
+                    System.out.print("\nDices ");
+                    for(Integer num: pos){
+                        System.out.print((num + 1) + " ");
+                    }
+                    System.out.println("are re-rolled");
 
                     numRolls++;
                     System.out.println("\n-Roll " + numRolls + "-");

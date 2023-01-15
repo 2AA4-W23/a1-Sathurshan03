@@ -31,14 +31,14 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | :-:  |:-:  |---       | :-:     | :-:       | :-:       |
 | Y   | F01 | Roll a dice |  D | 01/12/23 | 01/12/23 |
 | Y   | F02 | Roll eight dices  |  D | 01/12/23  | 01/12/23 |
-|    | F03 | Run 42 games in simulation  |  D  |  01/12/23 | 01/12/23 |
+| Y   | F03 | Run 42 games in simulation  |  D  |  01/12/23 | 01/12/23 |
 | Y   | F04 | end of game with three cranes | D | 01/12/23 | 01/12/23 |
-|    | F05 | Player keeping random number of dice at their turn | D | 01/12/23 | 01/12/23 | 
+| Y   | F05 | Player keeping random number of dice at their turn | D | 01/12/23 | 01/12/23 | 
 | Y   | F06 | Score points: 3 or more of a kind | D | 01/12/23 | 01/12/23 |
-|    | F07 | Score points: gold coins and diamonds | D | 01/12/23 | 01/12/23 | 
-|    | F08 | Output percent wins at end of simulation | D | 01/12/23 | 01/12/23 |
-|    | F09 | Have two players in simulation | D | 01/12/23 | 01/12/23 |
-|    | F10 | Play a game until there is a winner | D | 01/12/23 | 01/12/23 |
+| Y   | F07 | Score points: gold coins and diamonds | D | 01/12/23 | 01/12/23 | 
+| Y   | F08 | Output percent wins at end of simulation | D | 01/12/23 | 01/12/23 |
+| Y   | F09 | Have two players in simulation | D | 01/12/23 | 01/12/23 |
+| Y   | F10 | Play a game until there is a winner | D | 01/12/23 | 01/12/23 |
 |    | F11 | Output the exact dice that gets re-rolled | D | 01/14/23 | 01/14/23 |
 |    | F12 | Players gets 1 more turn after a player scores above 6000 | D | 01/15/23 | 01/15/23 |
 | ... | ... | ... |

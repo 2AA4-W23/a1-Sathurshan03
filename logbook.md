@@ -4,3 +4,5 @@
 | Jan 12, 2023 | Completed Step 1 questions in a report and submitted to Avenue |
 | Jan 12, 2023 | Implemented the new Business logic stated in Step 2 alongside with the MVP |
 | Jan 14, 2023 | Completed Step 2 questions in the report and submitted to Avenue |
+| Jan 14, 2023 | Added features F11 and F12 to improve user inteference and satisfy rulebook |
+| Jan 15, 2023 | Added new classes (Simulation, Game, Strategy) to clean up code |

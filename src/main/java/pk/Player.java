@@ -48,10 +48,12 @@ public class Player {
     }
 
     public void turn(){
+        //cleaning memory before turn starts
         numSkulls = 0;
         myDice.clear();
         currentDice.clear();
         skullDice.clear();
+
         System.out.println("\n--" + name + " is rolling--");
 
         //Initial Roll
@@ -96,7 +98,6 @@ public class Player {
 
         //Counts the number of skulls rolled and remove the skulls from the currentDice
         Iterator<Dice> iter = currentDice.iterator();
-
         while(iter.hasNext())
         {
             Dice die = (Dice)iter.next();
@@ -107,6 +108,7 @@ public class Player {
             }
         }
 
+        //check if turn is over by examining the number of skulls
         if (numSkulls >= 3)
         {
             System.out.println("\nTurn is over! More than 3 skulls were collected.");

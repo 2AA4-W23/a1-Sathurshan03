@@ -8,6 +8,7 @@ public class Simulation {
 
     public Simulation(int totGames, int totPlayers){
         this.totGames = totGames;
+        //Must atleast have two players playing
         if (totPlayers >=2){
             this.totPlayers = totPlayers;
         }

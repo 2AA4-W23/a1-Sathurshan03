@@ -29,6 +29,7 @@ public class Game {
                 player.turn();
                 if(player.getScore()>= 6000)
                 {
+                    //give every other play one more turn and then determine the winner
                     oneMoreRound(player);
                     if(isWinner()){
                         winnerFlag = true;
@@ -37,6 +38,7 @@ public class Game {
                 }
             }
             if (winnerFlag){
+                //winner of the game has been determines
                 break;
             }
         }

@@ -64,8 +64,8 @@ public class Strategy {
                 player.currentDice.get(index).roll();
             }
 
+            //Output the results
             printReRollDice(pos);
-           
             numRolls++;
             System.out.println("\n-Roll " + numRolls + "-");
             player.printDice();

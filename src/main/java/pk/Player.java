@@ -1,7 +1,5 @@
 package pk;
 
-import java.util.Random;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -14,6 +12,7 @@ public class Player {
     int score;
     int numSkulls;
     int numWins;
+    Strategy playerStrategy;
     List <Dice> myDice = new ArrayList<>(); 
     List <Dice> currentDice = new ArrayList<>(); 
     List <Dice> skullDice = new ArrayList<>();
@@ -24,6 +23,7 @@ public class Player {
         score = 0;
         numSkulls = 0;
         numWins = 0;
+        playerStrategy = new Strategy(strategies.RANDOM);
     }
 
     public String getName(){
@@ -60,62 +60,21 @@ public class Player {
             myDice.add(new Dice());
         }
         currentDice = myDice;
-        sortPlayerDice();
         printDice();
 
         //Rerolls
         int numRolls = 1;
+        boolean continueRoll = false;
         while(true)
         {
             //check if player can continue rolling or not
             if (continueTurn())
             {
-                int numActiveDice = 8 - numSkulls;
-
-                //Reroll random number of dice that are not skulls
-                Random randomNumber = new Random();
-                int numReRoll = randomNumber.nextInt(numActiveDice);
-
-                //If numReRoll is 0, no dice are reroll, so we end turn
-                //If numReRoll is not 0, we add 1 because we must roll atleast 2 dice at a time
                 sortPlayerDice();
-                if (numReRoll != 0)
+                continueRoll = playerStrategy.useStrategy(this, numRolls);
+                if (continueRoll == false)
                 {
-                    numReRoll++;
-                    List <Integer> pos = new ArrayList<>(); 
-                    
-                    //randomly find the positions of dice to re-roll
-                    for(int k = 0; k < numReRoll; )
-                    {
-                        int index = randomNumber.nextInt(numActiveDice);
-                        if (!(pos.contains((Integer)index))){
-                            pos.add((Integer)index);
-                            k++;
-                        }
-                    }
-
-                    pos.sort(null);
-
-                    //Re-roll the dice 
-                    for (Integer m: pos){
-                        currentDice.get(m).roll();
-                    }
-
-
-                    //Print the specific dice that is getting rerolled
-                    System.out.print("\nDices ");
-                    for(Integer num: pos){
-                        System.out.print((num + 1) + " ");
-                    }
-                    System.out.println("are re-rolled");
-
-                    numRolls++;
-                    System.out.println("\n-Roll " + numRolls + "-");
-                    printDice();
-
-                }
-                else{
-                    System.out.println("\nPlayer decided not to re-roll");
+                    //Player decided not to re-roll
                     break;
                 }
             }
@@ -128,7 +87,7 @@ public class Player {
         
         System.out.println("\n-Final Values of the Dice-");
         printDice();
-        System.out.println("\nSCORE: " + score);
+        System.out.println("\n" + name +"'s score: " + score);
 
     }
     private Boolean continueTurn(){
@@ -136,7 +95,7 @@ public class Player {
         //return Boolean: true if turn is not over, false if turn is over
 
         //Counts the number of skulls rolled and remove the skulls from the currentDice
-        Iterator iter = currentDice.iterator();
+        Iterator<Dice> iter = currentDice.iterator();
 
         while(iter.hasNext())
         {
@@ -159,7 +118,7 @@ public class Player {
         }
     }
 
-    private void printDice(){
+    public void printDice(){
         //Prints the 8 Dice information 
         sortPlayerDice();
 

@@ -1,7 +1,7 @@
 # A1 - Piraten Karpen
 
-  * Author: < You name here >
-  * Email: < Your email here >
+  * Author: Sathurshan Arulmohan
+  * Email: arulmohs@mcmaster.ca
 
 ## Build and Execution
 

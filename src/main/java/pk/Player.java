@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.logging.log4j.*;
 
 public class Player {
     String name;
@@ -16,6 +17,7 @@ public class Player {
     List <Dice> myDice = new ArrayList<>(); 
     List <Dice> currentDice = new ArrayList<>(); 
     List <Dice> skullDice = new ArrayList<>();
+    private static Logger LOG = LogManager.getLogger(Simulation.class);
 
     public Player(String name){
         this.name = name;
@@ -54,7 +56,7 @@ public class Player {
         currentDice.clear();
         skullDice.clear();
 
-        System.out.println("\n--" + name + " is rolling--");
+        LOG.trace("--" + name + " is rolling--");
 
         //Initial Roll
         for (int j = 0; j < 8; j++)
@@ -62,7 +64,7 @@ public class Player {
             myDice.add(new Dice());
         }
         currentDice = myDice;
-        printDice();
+        logDice();
 
         //Rerolls
         int numRolls = 1;
@@ -87,9 +89,9 @@ public class Player {
 
         calculateScore();
         
-        System.out.println("\n-Final Values of the Dice-");
-        printDice();
-        System.out.println("\n" + name +"'s score: " + score);
+        LOG.trace("-Final Values of the Dice-");
+        logDice();
+        LOG.trace(name +"'s score: " + score);
 
     }
     private Boolean continueTurn(){
@@ -111,7 +113,7 @@ public class Player {
         //check if turn is over by examining the number of skulls
         if (numSkulls >= 3)
         {
-            System.out.println("\nTurn is over! More than 3 skulls were collected.");
+            LOG.trace("Turn is over! More than 3 skulls were collected.");
             return false;
         }
         else
@@ -120,17 +122,17 @@ public class Player {
         }
     }
 
-    public void printDice(){
-        //Prints the 8 Dice information 
+    public void logDice(){
+        //logs the 8 Dice information 
         sortPlayerDice();
 
         for (int m = 0; m < currentDice.size(); m++)
         {
-            System.out.println( (m+1) + " " + currentDice.get(m).getRollValue());
+            LOG.trace((m+1) + " " + currentDice.get(m).getRollValue());
         }
         for (Dice die:skullDice)
         {
-            System.out.println("- " + die.getRollValue());
+            LOG.trace("- " + die.getRollValue());
         }
     }
 

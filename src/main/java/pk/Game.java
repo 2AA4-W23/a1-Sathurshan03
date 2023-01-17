@@ -1,8 +1,10 @@
 package pk;
 
 import java.util.ArrayList;
+import org.apache.logging.log4j.*;
 
 public class Game {
+    private static Logger LOG = LogManager.getLogger(Simulation.class);
     int gameNumber;
     ArrayList<Player> players;
 
@@ -13,7 +15,7 @@ public class Game {
 
     public void runGame(){
         //runs the game
-        System.out.println("\n=======GAME " + gameNumber + "=======");
+        LOG.trace("=======GAME " + gameNumber + "=======");
 
         //Reset each player's score
         for (Player player:players)

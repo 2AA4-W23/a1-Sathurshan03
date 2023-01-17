@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import org.apache.logging.log4j.*;
 
 enum strategies {
     RANDOM
@@ -12,6 +13,7 @@ enum strategies {
 public class Strategy {
 
     strategies currentStrategy;
+    private static Logger LOG = LogManager.getLogger(Simulation.class);
 
     public Strategy(strategies currentStrategy ){
         this.currentStrategy = currentStrategy;
@@ -64,27 +66,27 @@ public class Strategy {
                 player.currentDice.get(index).roll();
             }
 
-            //Output the results
-            printReRollDice(pos);
+            //Log the results
+            logReRollDice(pos);
             numRolls++;
-            System.out.println("\n-Roll " + numRolls + "-");
-            player.printDice();
+            LOG.trace("-Roll " + numRolls + "-");
+            player.logDice();
             
             return true;
         }
         else{
-            System.out.println("\nPlayer decided not to re-roll");
+            LOG.trace(player.name + " decided not to re-roll");
             return false;
         }
     }
 
-    private void printReRollDice(List <Integer> pos)
+    private void logReRollDice(List <Integer> pos)
     {
-         //Print the specific dice that is getting rerolled
-         System.out.print("\nDices ");
+         //Log the specific dice that is getting rerolled
+         String posOutput = "";
          for(Integer num: pos){
-             System.out.print((num + 1) + " ");
+             posOutput += (num + 1) + " ";
          }
-         System.out.println("are re-rolled");
+         LOG.trace("Dices " + posOutput + " are re-rolled");
     }
 }

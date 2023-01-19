@@ -84,6 +84,9 @@ public class Game {
         //Check if max score is above 6000
         if (maxValue >= 6000){
             maxScorePlayer.increaseNumWins();
+            if("True".equals(System.getProperty("traceMode"))){
+                LOG.trace(maxScorePlayer.name + " won game " + gameNumber + "!");
+            }
             return true;
         }
         return false;

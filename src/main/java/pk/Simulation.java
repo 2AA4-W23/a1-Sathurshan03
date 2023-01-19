@@ -34,7 +34,7 @@ public class Simulation {
         }
 
         //Print each player's winnings to console
-        System.out.println("=======Final Simulation Outcome=======");
+        System.out.println("\n=======Final Simulation Outcome=======");
         double wins;
         for(Player player:players)
         {
@@ -43,11 +43,13 @@ public class Simulation {
         }
 
         //Kepping log messages seperate so that it doesn't split the console output from above
-        LOG.trace("Final Simulation Outcome");
-        for(Player player:players)
-        {
-            wins = (double)player.getNumWins()/42*100;
-            LOG.trace(String.format("%s wins: %2.2f%%",player.getName() , wins));
+        if("True".equals(System.getProperty("traceMode"))){
+            LOG.trace("Final Simulation Outcome");
+            for(Player player:players)
+            {
+                wins = (double)player.getNumWins()/42*100;
+                LOG.trace(String.format("%s wins: %2.2f%%",player.getName() , wins));
+            }
         }
     }
 }

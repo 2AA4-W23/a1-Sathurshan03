@@ -11,10 +11,14 @@
     * `mvn compile`
   * To run the project in development mode:
     * `mvn -q exec:java` (here, `-q` tells maven to be _quiet_)
+  * To run the project in development mode with trace logs:
+    * `mvn -q exec:java -DtraceMode=True` 
   * To package the project as a turn-key artefact:
     * `mvn package`
   * To run the packaged delivery:
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
+  * To run the packaged delivery with Trace Mode:
+    * `java -jar -DtraceMode=True target/piraten-karpen-jar-with-dependencies.jar` 
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 

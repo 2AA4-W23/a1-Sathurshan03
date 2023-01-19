@@ -56,7 +56,9 @@ public class Player {
         currentDice.clear();
         skullDice.clear();
 
-        LOG.trace("--" + name + " is rolling--");
+        if("True".equals(System.getProperty("traceMode"))){
+            LOG.trace("--" + name + " is rolling--");
+        }
 
         //Initial Roll
         for (int j = 0; j < 8; j++)
@@ -64,7 +66,9 @@ public class Player {
             myDice.add(new Dice());
         }
         currentDice = myDice;
-        logDice();
+        if("True".equals(System.getProperty("traceMode"))){
+            logDice();
+        }
 
         //Rerolls
         int numRolls = 1;
@@ -89,9 +93,11 @@ public class Player {
 
         calculateScore();
         
-        LOG.trace("-Final Values of the Dice-");
-        logDice();
-        LOG.trace(name +"'s score: " + score);
+        if("True".equals(System.getProperty("traceMode"))){
+            LOG.trace("-Final Values of the Dice-");
+            logDice();
+            LOG.trace(name +"'s score: " + score);
+        }
 
     }
     private Boolean continueTurn(){
@@ -113,7 +119,9 @@ public class Player {
         //check if turn is over by examining the number of skulls
         if (numSkulls >= 3)
         {
+            if("True".equals(System.getProperty("traceMode"))){
             LOG.trace("Turn is over! More than 3 skulls were collected.");
+            }
             return false;
         }
         else

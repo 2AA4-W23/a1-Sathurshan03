@@ -67,15 +67,19 @@ public class Strategy {
             }
 
             //Log the results
-            logReRollDice(pos);
             numRolls++;
-            LOG.trace("-Roll " + numRolls + "-");
-            player.logDice();
+            if("True".equals(System.getProperty("traceMode"))){
+                logReRollDice(pos);
+                LOG.trace("-Roll " + numRolls + "-");
+                player.logDice();
+            }
             
             return true;
         }
         else{
-            LOG.trace(player.name + " decided not to re-roll");
+            if("True".equals(System.getProperty("traceMode"))){
+                LOG.trace(player.name + " decided not to re-roll");
+            }
             return false;
         }
     }

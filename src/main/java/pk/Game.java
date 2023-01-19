@@ -15,7 +15,9 @@ public class Game {
 
     public void runGame(){
         //runs the game
-        LOG.trace("=======GAME " + gameNumber + "=======");
+        if("True".equals(System.getProperty("traceMode"))){
+            LOG.trace("=======GAME " + gameNumber + "=======");
+        }
 
         //Reset each player's score
         for (Player player:players)

@@ -8,6 +8,10 @@ public class Dice {
         roll();
     }
 
+    public Dice(Faces face){
+        rollValue = face;
+    }
+
     public Faces roll() {
         int howManyFaces = Faces.values().length;
         Random bag = new Random();

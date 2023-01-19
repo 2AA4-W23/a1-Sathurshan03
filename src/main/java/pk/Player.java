@@ -25,7 +25,7 @@ public class Player {
         score = 0;
         numSkulls = 0;
         numWins = 0;
-        playerStrategy = new Strategy(strategies.RANDOM);
+        playerStrategy = new Strategy(strategies.COMBO);
     }
 
     public String getName(){
@@ -83,6 +83,9 @@ public class Player {
                 if (continueRoll == false)
                 {
                     //Player decided not to re-roll
+                    if("True".equals(System.getProperty("traceMode"))){
+                        LOG.trace(name + " decided not to re-roll");
+                    }
                     break;
                 }
             }

@@ -7,7 +7,7 @@ import java.util.Random;
 import org.apache.logging.log4j.*;
 
 enum strategies {
-    RANDOM
+    RANDOM, COMBO
 }
 
 public class Strategy {

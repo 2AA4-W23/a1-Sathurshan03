@@ -29,6 +29,9 @@ public class Strategy {
         if (currentStrategy.equals(strategies.RANDOM)){
             return runRandomStrategy(player, numRolls);
         }
+        else if (currentStrategy.equals(strategies.COMBO)){
+            return comboStrategy(player, numRolls);
+        }
         return false;
     }
     
@@ -82,6 +85,12 @@ public class Strategy {
             }
             return false;
         }
+    }
+
+    private boolean comboStrategy(Player player, int numRolls)
+    {
+
+        return false;
     }
 
     private void logReRollDice(List <Integer> pos)

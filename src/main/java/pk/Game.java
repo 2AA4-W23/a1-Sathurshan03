@@ -8,8 +8,8 @@ public class Game {
     int gameNumber;
     ArrayList<Player> players;
 
-    public Game(int gameNumer, ArrayList<Player> players){
-        this.gameNumber = gameNumer;
+    public Game(int gameNumber, ArrayList<Player> players){
+        this.gameNumber = gameNumber;
         this.players = players;
     }
 

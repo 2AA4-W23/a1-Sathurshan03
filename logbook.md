@@ -11,3 +11,4 @@
 | Jan 19, 2023 | Updated backlog to satisfy the updated business logic |
 | Jan 19, 2023 | Implemented logic for the new strategy : combo(only randomly re-rolls dices that are part of a combo that scores points) |
 | Jan 20, 2023 | Users can enter the player's strategy from command line |
+| Jan 20, 2023 | Updated Build and Execute section in the backlog |

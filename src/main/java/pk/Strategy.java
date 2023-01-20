@@ -139,13 +139,6 @@ public class Strategy {
 
         }
         else{
-
-            //Do not re-roll if all active dices are part of a combo
-            if(posNotCombo.size() == 0)
-            {
-                return false;
-            }
-
             //Find the positions of dices that are not combo dices
             for (int i = 0; i<player.currentDice.size(); i++)
             {
@@ -153,6 +146,12 @@ public class Strategy {
                 {
                     posNotCombo.add(i);
                 }
+            }
+
+            //Do not re-roll if all active dices are part of a combo
+            if(posNotCombo.size() == 0)
+            {
+                return false;
             }
             
             if("True".equals(System.getProperty("traceMode")) && comboFaces.size() > 0){

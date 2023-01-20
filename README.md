@@ -46,6 +46,6 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 |    | F11 | Output the exact dice that gets re-rolled | D | 01/14/23 | 01/14/23 |
 |    | F12 | Players gets 1 more turn after a player scores above 6000 | D | 01/15/23 | 01/15/23 |
 |    | F13 | New player strategy: Combo | D | 01/19/23 | 01/19/23 |
-|    | F14 | Choose player strategy | S | 01/19/23 |  |
+|    | F14 | Choose player strategy | D | 01/19/23 | 01/20/23 |
 | ... | ... | ... |
 

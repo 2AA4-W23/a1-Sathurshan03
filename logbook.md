@@ -10,3 +10,4 @@
 | Jan 16, 2023 | Converted System.out.println statements to log to trace player's decisions, scores and dice values throughout the game |
 | Jan 19, 2023 | Updated backlog to satisfy the updated business logic |
 | Jan 19, 2023 | Implemented logic for the new strategy : combo(only randomly re-rolls dices that are part of a combo that scores points) |
+| Jan 20, 2023 | Users can enter the player's strategy from command line |

@@ -7,16 +7,12 @@ public class Simulation {
     private static Logger LOG = LogManager.getLogger(Simulation.class);
     int totGames;
     int totPlayers;
+    String [] playersStrategy;
 
-    public Simulation(int totGames, int totPlayers){
+    public Simulation(int totGames, String [] playerStrategy){
         this.totGames = totGames;
-        //Must atleast have two players playing
-        if (totPlayers >=2){
-            this.totPlayers = totPlayers;
-        }
-        else{
-            this.totPlayers = 2;
-        }
+        this.playersStrategy = playerStrategy;
+        this.totPlayers = playerStrategy.length;
     }
 
     public void runSimulation()
@@ -25,7 +21,7 @@ public class Simulation {
         ArrayList <Player> players = new ArrayList<>();
         for (int i = 0; i < totPlayers; i++)
         {
-            players.add(new Player("player" + (i+1)));
+            players.add(new Player("player" + (i+1), playersStrategy[i]));
         }
 
         //Run the games

@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+
+import javax.lang.model.util.ElementScanner14;
+
 import org.apache.logging.log4j.*;
 
 public class Player {
@@ -19,13 +22,25 @@ public class Player {
     List <Dice> skullDice = new ArrayList<>();
     private static Logger LOG = LogManager.getLogger(Simulation.class);
 
-    public Player(String name){
+    public Player(String name, String strategy){
         this.name = name;
         gamesWon = 0;
         score = 0;
         numSkulls = 0;
         numWins = 0;
-        playerStrategy = new Strategy(strategies.COMBO);
+        if (strategy.toLowerCase() == "random")
+        {
+            playerStrategy = new Strategy(strategies.RANDOM);
+        }
+        else if (strategy.toLowerCase() == "combo")
+        {
+            playerStrategy = new Strategy(strategies.COMBO);
+        }
+        else{
+            //default to random strategy if invalid input
+            playerStrategy = new Strategy(strategies.RANDOM);
+        }
+       
     }
 
     public String getName(){

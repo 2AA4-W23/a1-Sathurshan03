@@ -5,9 +5,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-
-import javax.lang.model.util.ElementScanner14;
-
 import org.apache.logging.log4j.*;
 
 public class Player {
@@ -30,14 +27,23 @@ public class Player {
         numWins = 0;
         if (strategy.toLowerCase() == "random")
         {
+            if("True".equals(System.getProperty("traceMode"))){
+                LOG.trace(name + " is using strategy: RANDOM");
+            }
             playerStrategy = new Strategy(strategies.RANDOM);
         }
         else if (strategy.toLowerCase() == "combo")
         {
+            if("True".equals(System.getProperty("traceMode"))){
+                LOG.trace(name + " is using strategy: COMBO");
+            }
             playerStrategy = new Strategy(strategies.COMBO);
         }
         else{
             //default to random strategy if invalid input
+            if("True".equals(System.getProperty("traceMode"))){
+                LOG.trace(name + " is using strategy: RANDOM");
+            }
             playerStrategy = new Strategy(strategies.RANDOM);
         }
        

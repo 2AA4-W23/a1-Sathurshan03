@@ -52,13 +52,11 @@ public class Strategy {
 
         //Reroll random number of dice that are not skulls
         Random randomNumber = new Random();
-        int numReRoll = randomNumber.nextInt(numActiveDice);
+        int numReRoll = randomNumber.nextInt(numActiveDice + 1);
 
-        //If numReRoll is 0, no dice are reroll, so we end turn
-        //If numReRoll is not 0, we add 1 because we must roll atleast 2 dice at a time
-        if (numReRoll != 0)
+        //If numReRoll is 0 or 1, no dice are reroll, so we end turn
+        if (numReRoll != 0 && numReRoll != 1 )
         {
-            numReRoll++;
             ArrayList <Integer> pos = new ArrayList<>(); 
             
             //randomly find the positions of dice to re-roll

@@ -35,7 +35,7 @@ public class Simulation {
             LOG.trace("Final Simulation Outcome");
             for(Player player:players)
             {
-                wins = (double)player.getNumWins()/42*100;
+                wins = (double)player.getNumWins()/totGames*100;
                 LOG.trace(String.format("%s wins: %2.2f%%",player.getName() , wins));
             }
         }
@@ -44,7 +44,7 @@ public class Simulation {
         System.out.println("\n=======Final Simulation Outcome=======");
         for(Player player:players)
         {
-            wins = (double)player.getNumWins()/42*100;
+            wins = (double)player.getNumWins()/totGames*100;
             System.out.printf("%s wins: %2.2f%%\n",player.getName() , wins);
         }
     }

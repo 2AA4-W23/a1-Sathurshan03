@@ -13,9 +13,9 @@ enum strategies {
 public class Strategy {
 
     strategies currentStrategy;
-    private static Logger LOG = LogManager.getLogger(Simulation.class);
     ArrayList<Integer> posNotCombo;
-
+    private static Logger LOG = LogManager.getLogger(Simulation.class);
+    
     public Strategy(strategies currentStrategy ){
         this.currentStrategy = currentStrategy;
     }
@@ -24,19 +24,19 @@ public class Strategy {
         currentStrategy = newStrategy;
     }
 
-    public boolean useStrategy(Player player, int numRolls)
+    public boolean useStrategy(DiceCup diceCup, int numRolls)
     {
         //Run the logic of the player's strategy
         if (currentStrategy.equals(strategies.RANDOM)){
-            return runRandomStrategy(player, numRolls);
+            return runRandomStrategy(diceCup, numRolls);
         }
         else if (currentStrategy.equals(strategies.COMBO)){
-            return runComboStrategy(player, numRolls);
+            return runComboStrategy(diceCup, numRolls);
         }
         return false;
     }
     
-    private boolean runRandomStrategy(Player player, int numRolls)
+    private boolean runRandomStrategy(DiceCup diceCup, int numRolls)
     {
         //The logic of re-rolling for the RANDOM strategy
 
@@ -47,7 +47,7 @@ public class Strategy {
             numActiveDice = posNotCombo.size();
         }
         else{
-            numActiveDice = player.currentDice.size();
+            numActiveDice = diceCup.getCurrentDiceSize();
         }
 
         //Reroll random number of dice that are not skulls
@@ -59,7 +59,7 @@ public class Strategy {
         if (numReRoll != 0)
         {
             numReRoll++;
-            List <Integer> pos = new ArrayList<>(); 
+            ArrayList <Integer> pos = new ArrayList<>(); 
             
             //randomly find the positions of dice to re-roll
             for(int k = 0; k < numReRoll; )
@@ -67,7 +67,7 @@ public class Strategy {
                 int index;
                 if (currentStrategy.equals(strategies.COMBO))
                 {
-                    index = randomNumber.nextInt(player.currentDice.size());
+                    index = randomNumber.nextInt(diceCup.getCurrentDiceSize());
                     //ensure no duplicates so only unique dice are re-rolled
                     //AND ensure position is in posNotCombo so combo dices are not re-rolled
                     if (!(pos.contains((Integer)index)) && posNotCombo.contains((Integer)index)){
@@ -88,16 +88,13 @@ public class Strategy {
             Collections.sort(pos); 
 
             //Re-roll the selected pos dice 
-            for (Integer index: pos){
-                player.currentDice.get(index).roll();
-            }
+            diceCup.reRoll(pos);
 
             //Log the results
-            numRolls++;
             if("True".equals(System.getProperty("traceMode"))){
-                logReRollDice(pos);
+                diceCup.logReRollDice(pos);
                 LOG.trace("-Roll " + numRolls + "-");
-                player.logDice();
+                diceCup.logDice();
             }
             
             return true;
@@ -107,18 +104,13 @@ public class Strategy {
         }
     }
 
-    private boolean runComboStrategy(Player player, int numRolls)
+    private boolean runComboStrategy(DiceCup diceCup, int numRolls)
     {
         //The logic of re-rolling for the COMBO strategy
         //The goal is to only re-roll the dice that do not already have a combo
 
-        //Find the number of dice that are of each fice
-        int numFace[] = new int[5]; //5 non-skull faces
-        for(Dice activeDice:player.currentDice)
-        {
-            int index = activeDice.rollValue.ordinal();
-            numFace[index] ++;
-        }
+        //Find the number of dice that are of each face
+        int [] numFace = diceCup.rolledFacesInfo();
 
         //Find any Faces that has 3 or more re-occurences
         ArrayList<Faces> comboFaces = new ArrayList<>();
@@ -134,19 +126,13 @@ public class Strategy {
         Boolean continueTurn;
         if (comboFaces.size() == 0){
             currentStrategy = strategies.RANDOM;
-            continueTurn = runRandomStrategy(player, numRolls);
+            continueTurn = runRandomStrategy(diceCup, numRolls);
             currentStrategy = strategies.COMBO;
 
         }
         else{
             //Find the positions of dices that are not combo dices
-            for (int i = 0; i<player.currentDice.size(); i++)
-            {
-                if(!(comboFaces.contains(player.currentDice.get(i).rollValue)))
-                {
-                    posNotCombo.add(i);
-                }
-            }
+            posNotCombo = diceCup.findDiceNotCombo(comboFaces);
 
             //Do not re-roll if all active dices are part of a combo
             if(posNotCombo.size() == 0)
@@ -162,19 +148,11 @@ public class Strategy {
                 LOG.trace( outputFaces + "are the combos.");
             }
             //run the random strategy which will take care of the re-rolling of the non-combo dices
-            continueTurn =  runRandomStrategy(player, numRolls);
+            continueTurn =  runRandomStrategy(diceCup, numRolls);
         }
         return continueTurn;
         
     }
 
-    private void logReRollDice(List <Integer> pos)
-    {
-         //Log the specific dice that is getting rerolled
-         String posOutput = "";
-         for(Integer num: pos){
-             posOutput += (num + 1) + " ";
-         }
-         LOG.trace("Dices " + posOutput + "are re-rolled");
-    }
+
 }

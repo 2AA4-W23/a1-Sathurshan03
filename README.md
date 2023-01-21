@@ -12,13 +12,13 @@
   * To run the project in development mode:
     * `mvn -q exec:java -Dexec.args='random combo'` (here, `-q` tells maven to be _quiet_) ('random combo' can be replaced with any combination of `random` and `combo` greater than 2 in length)
   * To run the project in development mode with trace logs:
-    * `mvn -q exec:java -DtraceMode=True` 
+    * `mvn -q exec:java -DtraceMode=True -Dexec.args='random combo'` 
   * To package the project as a turn-key artefact:
     * `mvn package`
   * To run the packaged delivery:
-    * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
+    * `java -jar target/piraten-karpen-jar-with-dependencies.jar random combo` ("random combo" can be replaced with any combination of `random` and `combo` greater than 2 in length)
   * To run the packaged delivery with Trace Mode:
-    * `java -jar -DtraceMode=True target/piraten-karpen-jar-with-dependencies.jar random combo` ("random combo" can be replaced with any combination of `random` and `combo` greater than 2 in length)
+    * `java -jar -DtraceMode=True target/piraten-karpen-jar-with-dependencies.jar random combo` 
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 

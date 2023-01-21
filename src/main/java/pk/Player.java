@@ -1,7 +1,5 @@
 package pk;
 
-import org.apache.logging.log4j.*;
-
 public class Player {
     String name;
     int gamesWon;
@@ -9,7 +7,7 @@ public class Player {
     int numWins;
     DiceCup diceCup;
     Strategy playerStrategy;
-    private static Logger LOG = LogManager.getLogger(Simulation.class);
+    Log log = new Log();
 
     public Player(String name, String strategy){
         this.name = name;
@@ -20,23 +18,17 @@ public class Player {
 
         if (strategy.toLowerCase().equals("random"))
         {
-            if("True".equals(System.getProperty("traceMode"))){
-                LOG.trace(name + " is using strategy: RANDOM");
-            }
+            log.logMessage(name + " is using strategy: RANDOM");
             playerStrategy = new Strategy(strategies.RANDOM);
         }
         else if (strategy.toLowerCase().equals("combo"))
         {
-            if("True".equals(System.getProperty("traceMode"))){
-                LOG.trace(name + " is using strategy: COMBO");
-            }
+            log.logMessage(name + " is using strategy: COMBO");
             playerStrategy = new Strategy(strategies.COMBO);
         }
         else{
             //default to random strategy if invalid input
-            if("True".equals(System.getProperty("traceMode"))){
-                LOG.trace(name + " is using strategy: RANDOM");
-            }
+            log.logMessage(name + " is using strategy: RANDOM");
             playerStrategy = new Strategy(strategies.RANDOM);
         }
     }
@@ -66,9 +58,7 @@ public class Player {
         //cleaning diceCup before turn starts
         diceCup = new DiceCup();
 
-        if("True".equals(System.getProperty("traceMode"))){
-            LOG.trace("--" + name + " is rolling--");
-        }
+        log.logMessage("--" + name + " is rolling--");
 
         //Initial Roll
         diceCup.intialRoll();
@@ -87,9 +77,8 @@ public class Player {
                 if (!continueRoll)
                 {
                     //Player decided not to re-roll
-                    if("True".equals(System.getProperty("traceMode"))){
-                        LOG.trace(name + " decided not to re-roll");
-                    }
+                    log.logMessage(name + " decided not to re-roll");
+                    
                 }
             }
             else{
@@ -100,8 +89,6 @@ public class Player {
         diceCup.logFinalDice();
 
         score += diceCup.calculateDiceCupScore();
-        if("True".equals(System.getProperty("traceMode"))){
-            LOG.trace(name +"'s score: " + score);
-        }
+        log.logMessage(name +"'s score: " + score);
     }
 }

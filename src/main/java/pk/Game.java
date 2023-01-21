@@ -1,10 +1,9 @@
 package pk;
 
 import java.util.ArrayList;
-import org.apache.logging.log4j.*;
 
 public class Game {
-    private static Logger LOG = LogManager.getLogger(Simulation.class);
+    Log log = new Log();
     int gameNumber;
     ArrayList<Player> players;
 
@@ -15,9 +14,8 @@ public class Game {
 
     public void runGame(){
         //runs the game
-        if("True".equals(System.getProperty("traceMode"))){
-            LOG.trace("=======GAME " + gameNumber + "=======");
-        }
+        log.logMessage("=======GAME " + gameNumber + "=======");
+        
 
         //Reset each player's score
         for (Player player:players)
@@ -84,9 +82,7 @@ public class Game {
         //Check if max score is above 6000
         if (maxValue >= 6000){
             maxScorePlayer.increaseNumWins();
-            if("True".equals(System.getProperty("traceMode"))){
-                LOG.trace(maxScorePlayer.name + " won game " + gameNumber + "!");
-            }
+            log.logMessage(maxScorePlayer.name + " won game " + gameNumber + "!");
             return true;
         }
         return false;

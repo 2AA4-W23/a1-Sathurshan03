@@ -14,3 +14,4 @@
 | Jan 20, 2023 | Updated Build and Execute section in the backlog |
 | Jan 21, 2023 | New class(DiceCup) that takes care of each player's 8 dice and re-rolling service |
 | Jan 21, 2023 | Increased the probability of not re-rolling in RANDOM strategy |
+| Jan 21, 2023 | New Class Log that will output the logs during the game |

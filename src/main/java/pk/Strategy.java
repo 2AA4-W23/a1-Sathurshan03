@@ -2,9 +2,7 @@ package pk;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
-import org.apache.logging.log4j.*;
 
 enum strategies {
     RANDOM, COMBO
@@ -14,7 +12,7 @@ public class Strategy {
 
     strategies currentStrategy;
     ArrayList<Integer> posNotCombo;
-    private static Logger LOG = LogManager.getLogger(Simulation.class);
+    Log log = new Log();
     
     public Strategy(strategies currentStrategy ){
         this.currentStrategy = currentStrategy;
@@ -89,11 +87,10 @@ public class Strategy {
             diceCup.reRoll(pos);
 
             //Log the results
-            if("True".equals(System.getProperty("traceMode"))){
-                diceCup.logReRollDice(pos);
-                LOG.trace("-Roll " + numRolls + "-");
-                diceCup.logDice();
-            }
+            diceCup.logReRollDice(pos);
+            log.logMessage("-Roll " + numRolls + "-");
+            diceCup.logDice();
+            
             
             return true;
         }
@@ -138,13 +135,13 @@ public class Strategy {
                 return false;
             }
             
-            if("True".equals(System.getProperty("traceMode")) && comboFaces.size() > 0){
-                String outputFaces = "";
-                for (Faces face:comboFaces){
-                    outputFaces += face.name() + " ";
-                }
-                LOG.trace( outputFaces + "are the combos.");
+            //Log the combos
+            String outputFaces = "";
+            for (Faces face:comboFaces){
+                outputFaces += face.name() + " ";
             }
+            log.logMessage(outputFaces + "are the combos.");
+
             //run the random strategy which will take care of the re-rolling of the non-combo dices
             continueTurn =  runRandomStrategy(diceCup, numRolls);
         }

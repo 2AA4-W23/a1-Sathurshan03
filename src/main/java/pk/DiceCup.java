@@ -1,7 +1,6 @@
 package pk;
 
 import java.util.*;
-import org.apache.logging.log4j.*;
 
 public class DiceCup {
     //A collection of Dice
@@ -9,7 +8,7 @@ public class DiceCup {
     ArrayList <Dice> myDice; 
     List <Dice> currentDice; 
     List <Dice> skullDice;
-    private static Logger LOG = LogManager.getLogger(Simulation.class);
+    Log log = new Log();
 
     public DiceCup(){
         myDice = new ArrayList<>();
@@ -30,9 +29,7 @@ public class DiceCup {
         }
         currentDice = myDice;
 
-        if("True".equals(System.getProperty("traceMode"))){
-            logDice();
-        }
+        logDice();
     }
 
     public void reRoll(ArrayList<Integer> pos)
@@ -61,9 +58,7 @@ public class DiceCup {
         //check if turn is over by examining the number of skulls
         if (skullDice.size() >= 3)
         {
-            if("True".equals(System.getProperty("traceMode"))){
-            LOG.trace("Turn is over! More than 3 skulls were collected.");
-            }
+            log.logMessage("Turn is over! More than 3 skulls were collected.");
             return false;
         }
         else
@@ -111,10 +106,8 @@ public class DiceCup {
     }
 
     public void logFinalDice(){
-        if("True".equals(System.getProperty("traceMode"))){
-            LOG.trace("-Final Values of the Dice-");
+            log.logMessage("-Final Values of the Dice-");
             logDice();
-        }
     }
 
     public void logDice(){
@@ -123,22 +116,22 @@ public class DiceCup {
 
         for (int m = 0; m < currentDice.size(); m++)
         {
-            LOG.trace((m+1) + " " + currentDice.get(m).getRollValue());
+            log.logMessage((m+1) + " " + currentDice.get(m).getRollValue());
         }
         for (Dice die:skullDice)
         {
-            LOG.trace("- " + die.getRollValue());
+            log.logMessage("- " + die.getRollValue());
         }
     }
 
     public void logReRollDice(List <Integer> pos)
     {
-         //Log the specific dice that is getting rerolled
-         String posOutput = "";
-         for(Integer num: pos){
-             posOutput += (num + 1) + " ";
-         }
-         LOG.trace("Dices " + posOutput + "are re-rolled");
+        //Log the specific dice that is getting rerolled
+        String posOutput = "";
+        for(Integer num: pos){
+            posOutput += (num + 1) + " ";
+        }
+        log.logMessage("Dices " + posOutput + "are re-rolled");
     }
 
     public int calculateDiceCupScore()

@@ -1,13 +1,12 @@
 package pk;
 
 import java.util.ArrayList;
-import org.apache.logging.log4j.*;
 
 public class Simulation {
-    private static Logger LOG = LogManager.getLogger(Simulation.class);
     int totGames;
     int totPlayers;
     String [] playersStrategy;
+    Log log = new Log();
 
     public Simulation(int totGames, String [] playerStrategy){
         this.totGames = totGames;
@@ -31,13 +30,11 @@ public class Simulation {
 
         //log each player's winnings
         double wins;
-        if("True".equals(System.getProperty("traceMode"))){
-            LOG.trace("Final Simulation Outcome");
-            for(Player player:players)
-            {
-                wins = (double)player.getNumWins()/totGames*100;
-                LOG.trace(String.format("%s wins: %2.2f%%",player.getName() , wins));
-            }
+        log.logMessage("Final Simulation Outcome");
+        for(Player player:players)
+        {
+            wins = (double)player.getNumWins()/totGames*100;
+            log.logMessage(String.format("%s wins: %2.2f%%",player.getName() , wins));
         }
 
         //Print each player's winnings to console

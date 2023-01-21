@@ -47,5 +47,10 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 |    | F12 | Players gets 1 more turn after a player scores above 6000 | D | 01/15/23 | 01/15/23 |
 |    | F13 | New player strategy: Combo | D | 01/19/23 | 01/19/23 |
 |    | F14 | Choose player strategy | D | 01/19/23 | 01/20/23 |
+|    | F15 | Cards in Game | S | 01/21/23 |  |
+|    | F16 | Have a deck of cards | P | 01/21/23 |  |
+|    | F17 | Draw a card | P | 01/21/23 |  |
+|    | F18 | Aplly card affect at turn | P | 01/21/23 |  |
+|    | F19 | new feature: favour saber during Sea Battle | P | 01/21/23 |  |
 | ... | ... | ... |
 

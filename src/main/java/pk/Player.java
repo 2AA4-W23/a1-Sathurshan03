@@ -5,6 +5,7 @@ public class Player {
     int gamesWon;
     int score;
     int numWins;
+    Cards currentCard;
     DiceCup diceCup;
     Strategy playerStrategy;
     Log log = new Log();
@@ -31,6 +32,9 @@ public class Player {
             log.logMessage(name + " is using strategy: RANDOM");
             playerStrategy = new Strategy(strategies.RANDOM);
         }
+    }
+    public void setPlayerCard(Cards card){
+        currentCard = card;
     }
 
     public String getName(){

@@ -6,10 +6,12 @@ public class Game {
     Log log = new Log();
     int gameNumber;
     ArrayList<Player> players;
+    Deck deck;
 
     public Game(int gameNumber, ArrayList<Player> players){
         this.gameNumber = gameNumber;
         this.players = players;
+        deck = new Deck();
     }
 
     public void runGame(){
@@ -28,6 +30,7 @@ public class Game {
         while (true){
             for (Player player:players)
             {
+                player.setPlayerCard(deck.drawCard());
                 player.turn();
                 if(player.getScore()>= 6000)
                 {
@@ -55,11 +58,13 @@ public class Game {
         //Players turn after player in list
         for (int i = playerPos+1; i<players.size(); i++)
         {
+            players.get(i).setPlayerCard(deck.drawCard());
             players.get(i).turn();
         }
 
         //Players turn before player in list
         for (int i = 0; i < playerPos; i++){
+            players.get(i).setPlayerCard(deck.drawCard());
             players.get(i).turn();
         }
     }

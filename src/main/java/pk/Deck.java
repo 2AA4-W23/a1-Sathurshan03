@@ -3,10 +3,17 @@ package pk;
 import java.util.*;
 
 public class Deck {
-    ArrayList<Cards> newDeck = new ArrayList<>();
-    Stack<Cards> deck = new Stack<>();
+    ArrayList<Cards> newDeck;
+    Stack<Cards> deck;
 
     public Deck(){
+        newDeck = new ArrayList<>();
+        deck = new Stack<>();
+
+        putAllCardDeck();
+        shuffle();
+    }
+    private void putAllCardDeck(){
         //create 6 sea battle cards
         for(int i = 0; i < 6; i++){
             newDeck.add(Cards.SEABATTLE);
@@ -16,19 +23,27 @@ public class Deck {
         for(int i = 0; i < 29; i++){
             newDeck.add(Cards.NOP);
         }
-
-        shuffle();
     }
+
     private void shuffle(){
         //shuffle the deck of cards into a stack
-        for (int i = 0; i < newDeck.size(); i++)
+        int numCards = newDeck.size();
+        for (int i = 0; i < numCards; i++)
         {
             Random randomNumber = new Random();
-            int pos = randomNumber.nextInt(deck.size());
+            int pos = randomNumber.nextInt(newDeck.size());
     
             //add the cards to the final deck of card as a stack
             deck.push(newDeck.remove(pos));
             
         }
+    }
+    public Cards drawCard(){
+        //if deck is empty, then create a new deck
+        if (deck.size() == 0){
+            putAllCardDeck();
+            shuffle();
+        }
+        return deck.pop();
     }
 }

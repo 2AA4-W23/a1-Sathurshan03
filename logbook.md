@@ -15,3 +15,10 @@
 | Jan 21, 2023 | New class(DiceCup) that takes care of each player's 8 dice and re-rolling service |
 | Jan 21, 2023 | Increased the probability of not re-rolling in RANDOM strategy |
 | Jan 21, 2023 | New Class Log that will output the logs during the game |
+| Jan 21, 2023 | Introduced cards and deck to the game |
+| Jan 21, 2023 | Implemented the Sea battle and its effect |
+| Jan 21, 2023 | Created a strategy for when a player draws a Sea battle card |
+| Jan 21, 2023 | Calculate the score with the sea battle card |
+| Jan 21, 2023 | Updated the Backlog with the new business logic |
+| Jan 21, 2023 | Created a monkey business card and implemented its effect |
+| Jan 21, 2023 | Calculate the new scores with the monkey business card |

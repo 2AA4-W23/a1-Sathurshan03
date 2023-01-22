@@ -13,6 +13,7 @@ public class Strategy {
     strategies currentStrategy;
     ArrayList<Integer> posNotCombo;
     Log log = new Log();
+    Cards currentCard;
     
     public Strategy(strategies currentStrategy ){
         this.currentStrategy = currentStrategy;
@@ -20,6 +21,10 @@ public class Strategy {
 
     public void changeStrategy(strategies newStrategy){
         currentStrategy = newStrategy;
+    }
+
+    public void setRoundCard(Cards card){
+        currentCard = card;
     }
 
     public boolean useStrategy(DiceCup diceCup, int numRolls)

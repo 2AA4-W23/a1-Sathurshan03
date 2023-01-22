@@ -30,8 +30,7 @@ public class Game {
         while (true){
             for (Player player:players)
             {
-                player.setPlayerCard(deck.drawCard());
-                player.turn();
+                player.turn(deck.drawCard());
                 if(player.getScore()>= 6000)
                 {
                     //give every other play one more turn and then determine the winner
@@ -58,14 +57,12 @@ public class Game {
         //Players turn after player in list
         for (int i = playerPos+1; i<players.size(); i++)
         {
-            players.get(i).setPlayerCard(deck.drawCard());
-            players.get(i).turn();
+            players.get(i).turn(deck.drawCard());
         }
 
         //Players turn before player in list
         for (int i = 0; i < playerPos; i++){
-            players.get(i).setPlayerCard(deck.drawCard());
-            players.get(i).turn();
+            players.get(i).turn(deck.drawCard());
         }
     }
 

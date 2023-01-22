@@ -15,7 +15,6 @@ public class Player {
         gamesWon = 0;
         score = 0;
         numWins = 0;
-        diceCup = new DiceCup();
 
         if (strategy.toLowerCase().equals("random"))
         {
@@ -33,9 +32,7 @@ public class Player {
             playerStrategy = new Strategy(strategies.RANDOM);
         }
     }
-    public void setPlayerCard(Cards card){
-        currentCard = card;
-    }
+
 
     public String getName(){
         return name;
@@ -58,9 +55,13 @@ public class Player {
         score = 0;
     }
 
-    public void turn(){
+    public void turn(Cards card){
+        //set the player drawed card for this turn
+        currentCard = card;
+        playerStrategy.setRoundCard(currentCard);
+
         //cleaning diceCup before turn starts
-        diceCup = new DiceCup();
+        diceCup = new DiceCup(currentCard);
 
         log.logMessage("--" + name + " is rolling--");
 

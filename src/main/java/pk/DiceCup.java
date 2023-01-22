@@ -9,11 +9,13 @@ public class DiceCup {
     List <Dice> currentDice; 
     List <Dice> skullDice;
     Log log = new Log();
+    Cards card;
 
-    public DiceCup(){
+    public DiceCup(Cards card){
         myDice = new ArrayList<>();
         currentDice = new ArrayList<>();
         skullDice = new ArrayList<>();
+        this.card = card;
     }
 
     public int getCurrentDiceSize(){

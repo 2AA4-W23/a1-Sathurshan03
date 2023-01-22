@@ -55,7 +55,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F20 | award points if successful Sea Battle play | D | 01/21/23 | 01/21/23 |
 | F21 | New Money Business Card | D | 01/21/23 | 01/21/23 |
 | F22 | Add Money Business Card to deck | D | 01/21/23 | 01/21/23 |
-| F23 | implement Monkey Busines Card effect | S |  |  |
+| F23 | implement Monkey Busines Card effect | D | 01/21/23 | 01/21/23 |
 | F24 | Calculate score for monkey business card | P |  |  |
 | F25 | New Gold and Diamond Card | P |  |  |
 | F26 | add Gold and Diamond Card to deck | B(F25) |  |  |

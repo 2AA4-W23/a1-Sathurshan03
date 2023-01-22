@@ -121,6 +121,26 @@ public class Strategy {
                 comboFaces.add(face);
             }
         }
+
+        //Player has the monkey business card
+        if (currentCard.equals(Cards.MONKEYBUSINESS))
+        {
+            //Monkey and parrot is in pos 0 and 1 in numFace
+            int total = numFace[0] + numFace[1];
+            
+            //if the total of monkey and parrot faces greater than three, then consider it as a combo
+            if (total >= 3)
+            {
+                if (!comboFaces.contains(Faces.MONKEY))
+                {
+                    comboFaces.add(Faces.MONKEY);
+                }
+                if (!comboFaces.contains(Faces.PARROT))
+                {
+                    comboFaces.add(Faces.PARROT);
+                }
+            }
+        }
         
         //if there are no combos, run random strategy for this turn
         Boolean continueTurn;

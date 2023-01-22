@@ -79,8 +79,22 @@ public class Player {
                 diceCup.sortPlayerDice();
                 numRolls++;
                 continueRoll = playerStrategy.useStrategy(diceCup, numRolls);
+
+                //player doesn't roll next round
                 if (!continueRoll)
                 {
+                    //player has any of the sea battle cards
+                    if ((currentCard.equals(Cards.SEABATTLE2)|| currentCard.equals(Cards.SEABATTLE3)|| currentCard.equals(Cards.SEABATTLE5)))
+                    {
+                        if ( diceCup.countNumFace(Faces.SABER) >= currentCard.num )
+                        {
+                            log.logMessage( name + " won the sea battle!");
+                        }
+                        else{
+                            log.logMessage( name + " lost the sea battle.");
+                        }
+                    
+                    }
                     //Player decided not to re-roll
                     log.logMessage(name + " decided not to re-roll");
                     

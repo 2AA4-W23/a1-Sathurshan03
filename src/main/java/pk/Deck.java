@@ -14,15 +14,17 @@ public class Deck {
         shuffle();
     }
     private void putAllCardDeck(){
-        //create 6 sea battle cards
-        for(int i = 0; i < 6; i++){
-            newDeck.add(Cards.SEABATTLE);
+        //create 6 sea battle cards of 2 of each type
+        for(int i = 0; i < 20; i++){
+            newDeck.add(Cards.SEABATTLE2);
+            newDeck.add(Cards.SEABATTLE3);
+            newDeck.add(Cards.SEABATTLE5);
         }
 
-        //create 29 NOP cards
-        for(int i = 0; i < 29; i++){
-            newDeck.add(Cards.NOP);
-        }
+        // //create 29 NOP cards
+        // for(int i = 0; i < 29; i++){
+        //     newDeck.add(Cards.NOP);
+        // }
     }
 
     private void shuffle(){

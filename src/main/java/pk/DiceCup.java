@@ -97,6 +97,20 @@ public class DiceCup {
          return posNotCombo;
     }
 
+    public int countNumFace(Faces face)
+    {
+        //counts the number of the dice that has the face rolled
+        int counter = 0;
+        for(Dice die:currentDice)
+        {
+            if(die.rollValue.equals(face)){
+                counter++;
+            }
+        }
+
+        return counter;
+    }
+
     public void sortPlayerDice()
     {
         //Sorts the player dice based on the enum order

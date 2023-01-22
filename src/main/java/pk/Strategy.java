@@ -27,7 +27,7 @@ public class Strategy {
     public boolean useStrategy(DiceCup diceCup, int numRolls)
     {
         //Run the logic of the player's strategy
-        if (currentCard.equals(Cards.SEABATTLE)){
+        if (currentCard.equals(Cards.SEABATTLE2) || currentCard.equals(Cards.SEABATTLE3) || currentCard.equals(Cards.SEABATTLE5)){
             return runSeaBattleCombo(diceCup, numRolls);
         }
         else if (currentStrategy.equals(strategies.RANDOM)){
@@ -154,6 +154,7 @@ public class Strategy {
     }
     public boolean runSeaBattleCombo(DiceCup diceCup, int numRolls){
         //When the player has a seabattle, they must get a certain amount of sabers to earn points
+        //returns true if the player has to re-roll
         log.logMessage(Faces.SABER.name() + " is the combo");
 
         //find the positions that are not Sabers
@@ -161,13 +162,22 @@ public class Strategy {
         saberFace.add(Faces.SABER);
         posNotCombo = diceCup.findDiceNotCombo(saberFace);
 
-        //Run random strategy on the dices that do not have the face Saber
-        Boolean continueTurn;
+        int numSabers = diceCup.countNumFace(Faces.SABER);
 
-        strategies playStrategies = currentStrategy;
-        currentStrategy = strategies.SABERCOMBO;
-        continueTurn = runRandomStrategy(diceCup, numRolls);
-        currentStrategy = playStrategies;
+        //Do not re-roll if the minimum number of sabers has been reached
+        Boolean continueTurn;
+        if (numSabers >= currentCard.num)
+        {
+            continueTurn = false;
+        }
+        else
+        {
+            //Run random strategy on the dices that do not have the face Saber
+            strategies playStrategies = currentStrategy;
+            currentStrategy = strategies.SABERCOMBO;
+            continueTurn = runRandomStrategy(diceCup, numRolls);
+            currentStrategy = playStrategies;
+        }
 
         return continueTurn;
     }

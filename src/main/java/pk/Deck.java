@@ -21,8 +21,13 @@ public class Deck {
             newDeck.add(Cards.SEABATTLE5);
         }
 
-        //create 29 NOP cards
-        for(int i = 0; i < 29; i++){
+        //create 4 monkey business cards
+        for(int i = 0; i < 4; i++){
+            newDeck.add(Cards.MONKEYBUSINESS);
+        }
+
+        //create 25 NOP cards
+        for(int i = 0; i < 25; i++){
             newDeck.add(Cards.NOP);
         }
     }

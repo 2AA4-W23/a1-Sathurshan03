@@ -54,8 +54,8 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F19 | sea battle cards have specific number of saber to roll | D | 01/21/23 | 01/21/23 |
 | F20 | award points if successful Sea Battle play | D | 01/21/23 | 01/21/23 |
 | F21 | New Money Business Card | D | 01/21/23 | 01/21/23 |
-| F22 | Add Money Business Card to deck | P | 01/21/23 | |
-| F23 | implement Monkey Busines Card effect | P |  |  |
+| F22 | Add Money Business Card to deck | D | 01/21/23 | 01/21/23 |
+| F23 | implement Monkey Busines Card effect | S |  |  |
 | F24 | Calculate score for monkey business card | P |  |  |
 | F25 | New Gold and Diamond Card | P |  |  |
 | F26 | add Gold and Diamond Card to deck | B(F25) |  |  |

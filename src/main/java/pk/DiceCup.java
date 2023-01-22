@@ -22,7 +22,7 @@ public class DiceCup {
         return currentDice.size();
     }
 
-    public void intialRoll()
+    public void initialRoll()
     {
         //Initial Roll
         for (int j = 0; j < 8; j++)

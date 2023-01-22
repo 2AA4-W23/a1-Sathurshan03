@@ -66,7 +66,7 @@ public class Player {
         log.logMessage("--" + name + " is rolling--");
 
         //Initial Roll
-        diceCup.intialRoll();
+        diceCup.initialRoll();
 
         //Rerolls
         int numRolls = 1;

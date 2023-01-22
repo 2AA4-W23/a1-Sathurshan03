@@ -50,6 +50,6 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F15 | Cards in Game | D | 01/21/23 | 01/21/23 |
 | F16 | Have a deck of cards | D | 01/21/23 | 01/21/23 |
 | F17 | Draw a card | D | 01/21/23 | 01/21/23 |
-| F18 | new feature: favour saber during Sea Battle | P | 01/21/23 |  |
+| F18 | new feature: favour saber during Sea Battle | D | 01/21/23 | 01/21/23 |
 | ... | ... | ... |
 

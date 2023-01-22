@@ -98,9 +98,10 @@ public class Player {
                         }
                     
                     }
-                    //Player decided not to re-roll
-                    log.logMessage(name + " decided not to re-roll");
-                    
+                    else{
+                        //Player decided not to re-roll
+                        log.logMessage(name + " decided not to re-roll");
+                    }
                 }
             }
             else{

@@ -155,12 +155,7 @@ public class DiceCup {
         int turnScore = 0;
 
         //Calculate the player's score at the end of their turn
-        if (skullDice.size() >= 3)
-        {
-            turnScore += 0;
-        }
-        
-        else 
+        if (skullDice.size() < 3 )
         {
             //Atleast three in a row combo
             int counter;
@@ -207,6 +202,21 @@ public class DiceCup {
                     turnScore += counter * 100;
                 }
             }
+        }
+
+        //Sea of battle points
+        if ((card.equals(Cards.SEABATTLE2)|| card.equals(Cards.SEABATTLE3)|| card.equals(Cards.SEABATTLE5)))
+        {
+            if (countNumFace(Faces.SABER) >= card.num )
+            {
+                //award points for a successful win in the sea of battles
+                turnScore += card.points;
+            }
+            else{
+                //no points for losing in the sea of battles
+                turnScore = 0;
+            }
+        
         }
 
         return turnScore;

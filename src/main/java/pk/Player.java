@@ -63,6 +63,9 @@ public class Player {
         //cleaning diceCup before turn starts
         diceCup = new DiceCup(currentCard);
 
+        log.logMessage("--" + name + " is drawing a card--");
+        log.logMessage(name + " drawed: " + currentCard.cardName);
+
         log.logMessage("--" + name + " is rolling--");
 
         //Initial Roll

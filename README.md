@@ -53,7 +53,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F18 | new feature: favour saber during Sea Battle | D | 01/21/23 | 01/21/23 |
 | F19 | sea battle cards have specific number of saber to roll | D | 01/21/23 | 01/21/23 |
 | F20 | award points if successful Sea Battle play | D | 01/21/23 | 01/21/23 |
-| F21 | New Money Business Card | P | 01/21/23 |  |
+| F21 | New Money Business Card | D | 01/21/23 | 01/21/23 |
 | F22 | implement Monkey Busines Card effect | P |  |  |
 | F23 | Calculate score for monkey business card | P |  |  |
 | F24 | New Gold and Diamond Card | P |  |  |

@@ -4,6 +4,7 @@ public enum Cards {
     SEABATTLE2(2,300, "Sea Battle 2"),
     SEABATTLE3(3,500, "Sea Battle 3"),
     SEABATTLE5(5,1000, "Sea Battle 5"),
+    MONKEYBUSINESS(0,0,"Moneky Business"),
     NOP(0,0, "Empty Card");
 
     public final int num; //represents a number depending on the card

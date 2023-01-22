@@ -157,51 +157,27 @@ public class DiceCup {
         //Calculate the player's score at the end of their turn
         if (skullDice.size() < 3 )
         {
-            //Atleast three in a row combo
-            int counter;
-            //iterate through each face except for the skull
-            for (int i = 0; i < 5; i++)
-            {
-                //count the number of dice that has that face
-                counter = 0;
-                for (Dice die:currentDice)
-                {
-                    if (die.getRollValue().equals(Faces.values()[i])){
-                        counter ++;
-                    }
-                }
-                //reward points based on the number of identical faces
-                if (counter == 3)
-                {
-                    turnScore += 100;
-                }
-                else if (counter == 4)
-                {
-                    turnScore += 200;
-                }
-                else if (counter == 5)
-                {
-                    turnScore += 500;
-                }
-                else if (counter == 6)
-                {
-                    turnScore += 1000;
-                }
-                else if (counter == 7)
-                {
-                    turnScore += 2000;
-                }
-                else if (counter >= 8)
-                {
-                    turnScore += 4000;
-                }
+            int total;
 
-                //Reward points for rolling diamond and gold coins
-                if (Faces.values()[i].equals(Faces.DIAMOND) || Faces.values()[i].equals(Faces.GOLD))
-                {
-                    turnScore += counter * 100;
-                }
+            //MonkeyBusiness Card
+            if (card.equals(Cards.MONKEYBUSINESS))
+            {
+                //count the numnber of monkey and parrot cards
+                total = countNumFace(Faces.MONKEY) + countNumFace(Faces.PARROT);
+                turnScore += getComboScore(total);
+                
+                
+                //check if the other faces have combos
+                turnScore += getComboScore(countNumFace(Faces.DIAMOND)) + getComboScore(countNumFace(Faces.GOLD)) + getComboScore(countNumFace(Faces.SABER));
             }
+            else
+            {
+                //Atleast three in a row combo, no spciecal combo card
+                turnScore += getComboScore(countNumFace(Faces.MONKEY)) + getComboScore(countNumFace(Faces.PARROT)) + getComboScore(countNumFace(Faces.DIAMOND)) + getComboScore(countNumFace(Faces.GOLD)) + getComboScore(countNumFace(Faces.SABER));
+            }
+
+            //Reward points for rolling diamond and gold coins
+            turnScore += (countNumFace(Faces.DIAMOND) * 100 + countNumFace(Faces.GOLD) * 100);
         }
 
         //Sea of battle points
@@ -220,6 +196,35 @@ public class DiceCup {
         }
 
         return turnScore;
+    }
+    private int getComboScore(int combo)
+    {
+        //returns the combo score for the combo value
+        if (combo == 3)
+        {
+            return 100;
+        }
+        else if (combo == 4)
+        {
+            return 200;
+        }
+        else if (combo == 5)
+        {
+            return 500;
+        }
+        else if (combo == 6)
+        {
+            return 1000;
+        }
+        else if (combo == 7)
+        {
+            return 2000;
+        }
+        else if (combo >= 8)
+        {
+            return 4000;
+        }
+        return 0;
     }
     
 }

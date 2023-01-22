@@ -54,23 +54,28 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F19 | sea battle cards have specific number of saber to roll | D | 01/21/23 | 01/21/23 |
 | F20 | award points if successful Sea Battle play | D | 01/21/23 | 01/21/23 |
 | F21 | New Money Business Card | D | 01/21/23 | 01/21/23 |
-| F22 | implement Monkey Busines Card effect | P |  |  |
-| F23 | Calculate score for monkey business card | P |  |  |
-| F24 | New Gold and Diamond Card | P |  |  |
-| F25 | Implement Gold and Diamond Card effect | B(F24) |  |  |
-| F26 | Calculate score for Gold and Diamond Card | B(F25) |  |  |
-| F27 | New Captain Card | P |  |  |
-| F28 | Implement New Captain Card effect | B(F27) |  |  |
-| F29 | Calculate score for New Captain Card | B(F28) |  |  |
-| F30 | New Skull Card | P |  |  |
-| F31 | Implement New Skull Card effect | B(F30) |  |  |
-| F32 | Calculate score for Skull Card | B(F31) |  |  |
-| F33 | New Sorceress Card | P |  |  |
-| F34 | Implement New Sorceress Card effect | B(F33) |  |  |
-| F35 | Calculate score for Sorceress Card | B(F34) |  |  |
-| F36 | Create Island of Skulls mode | P |  |  |
-| F37 | Move player to Island of Skulls mode when 4 or more skulls in initial roll | B{F36} |  |  |
-| F38 | Island of Skulls mode ends when less than 1 skull is rolled | B(F37) |  |  |
-| F39 | Deduct points depending on outcome of Islands of Skulls | B(F34) |  |  |
+| F22 | Add Money Business Card to deck | P | 01/21/23 | |
+| F23 | implement Monkey Busines Card effect | P |  |  |
+| F24 | Calculate score for monkey business card | P |  |  |
+| F25 | New Gold and Diamond Card | P |  |  |
+| F26 | add Gold and Diamond Card to deck | B(F25) |  |  |
+| F27 | Implement Gold and Diamond Card effect | B(F26) |  |  |
+| F28 | Calculate score for Gold and Diamond Card | B(F27) |  |  |
+| F29 | New Captain Card | P |  |  |
+| F30 | add Captain Card to deck| B(F29) |  |  |
+| F31 | Implement New Captain Card effect | B(F30) |  |  |
+| F32 | Calculate score for New Captain Card | B(F31) |  |  |
+| F33 | New Skull Card | P |  |  |
+| F34 | add Skull Card to deck| B(F33) |  |  |
+| F35 | Implement New Skull Card effect | B(F34) |  |  |
+| F36 | Calculate score for Skull Card | B(F35) |  |  |
+| F37 | New Sorceress Card | P |  |  |
+| F38 | add Sorceress Card to deck | B(F37) |  |  |
+| F39 | Implement New Sorceress Card effect | B(F38) |  |  |
+| F40 | Calculate score for Sorceress Card | B(F39) |  |  |
+| F41 | Create Island of Skulls mode | P |  |  |
+| F42 | Move player to Island of Skulls mode when 4 or more skulls in initial roll | B{F41} |  |  |
+| F43 | Island of Skulls mode ends when less than 1 skull is rolled | B(F42) |  |  |
+| F44 | Deduct points depending on outcome of Islands of Skulls | B(F43) |  |  |
 | ... | ... | ... |
 

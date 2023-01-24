@@ -10,6 +10,7 @@ public enum Cards {
     CAPTAIN(2,0,"Captain"),
     SKULL1(1,0,"Skull 1"),
     SKULL2(2,0,"Skull 2"),
+    SORCERESS(0,0,"Sorceress"),
     NOP(0,0, "Empty Card");
 
     public final int num; //represents a number depending on the card

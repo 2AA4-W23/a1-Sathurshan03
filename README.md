@@ -65,7 +65,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F30 | add Captain Card to deck| B(F29) |  |  |
 | F31 | Implement New Captain Card effect | B(F30) |  |  |
 | F32 | Calculate score for New Captain Card | B(F31) |  |  |
-| F33 | New Skull Card | P |  |  |
+| F33 | New Skull Card | D | 01/24/23 | 01/24/23 |
 | F34 | add Skull Card to deck| B(F33) |  |  |
 | F35 | Implement New Skull Card effect | B(F34) |  |  |
 | F36 | Calculate score for Skull Card | B(F35) |  |  |

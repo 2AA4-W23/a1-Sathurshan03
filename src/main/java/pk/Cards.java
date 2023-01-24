@@ -7,6 +7,7 @@ public enum Cards {
     MONKEYBUSINESS(0,0,"Moneky Business"),
     GOLD(0,100, "Gold"),
     DIAMOND(0,100, "Diamond"),
+    CAPTAIN(2,0,"Captain"),
     NOP(0,0, "Empty Card");
 
     public final int num; //represents a number depending on the card

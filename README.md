@@ -61,7 +61,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F26 | add Gold and Diamond Card to deck | B(F25) |  |  |
 | F27 | Implement Gold and Diamond Card effect | B(F26) |  |  |
 | F28 | Calculate score for Gold and Diamond Card | B(F27) |  |  |
-| F29 | New Captain Card | P |  |  |
+| F29 | New Captain Card | D | 01/24/23 | 01/24/23 |
 | F30 | add Captain Card to deck| B(F29) |  |  |
 | F31 | Implement New Captain Card effect | B(F30) |  |  |
 | F32 | Calculate score for New Captain Card | B(F31) |  |  |

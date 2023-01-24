@@ -57,7 +57,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F22 | Add Money Business Card to deck | D | 01/21/23 | 01/21/23 |
 | F23 | implement Monkey Busines Card effect | D | 01/21/23 | 01/21/23 |
 | F24 | Calculate score for monkey business card | D | 01/21/23 | 01/21/23 |
-| F25 | New Gold and Diamond Card | P |  |  |
+| F25 | New Gold and Diamond Card | D | 01/24/23 | 01/24/23 |
 | F26 | add Gold and Diamond Card to deck | B(F25) |  |  |
 | F27 | Implement Gold and Diamond Card effect | B(F26) |  |  |
 | F28 | Calculate score for Gold and Diamond Card | B(F27) |  |  |

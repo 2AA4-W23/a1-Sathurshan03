@@ -22,3 +22,4 @@
 | Jan 21, 2023 | Updated the Backlog with the new business logic |
 | Jan 21, 2023 | Created a monkey business card and implemented its effect |
 | Jan 21, 2023 | Calculate the new scores with the monkey business card |
+| Jan 24, 2023 | Bonus Step of adding new cards and its effects: Gold, Diamond, Caption, Skull |

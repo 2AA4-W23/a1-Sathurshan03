@@ -1,8 +1,9 @@
 package pk;
 
+import java.util.List;
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 enum strategies {
     RANDOM, COMBO, SABERCOMBO
@@ -11,7 +12,7 @@ enum strategies {
 public class Strategy {
 
     strategies currentStrategy;
-    ArrayList<Integer> posNotCombo;
+    List<Integer> posNotCombo;
     Log log = new Log();
     Cards currentCard;
     
@@ -60,7 +61,7 @@ public class Strategy {
         //If numReRoll is 0 or 1, no dice are reroll, so we end turn
         if (numReRoll != 0 && numReRoll != 1 )
         {
-            ArrayList <Integer> pos = new ArrayList<>(); 
+            List <Integer> pos = new ArrayList<>(); 
             
             //randomly find the positions of dice to re-roll
             for(int k = 0; k < numReRoll; )
@@ -113,7 +114,7 @@ public class Strategy {
         int [] numFace = diceCup.rolledFacesInfo();
 
         //Find any Faces that has 3 or more re-occurences
-        ArrayList<Faces> comboFaces = new ArrayList<>();
+        List<Faces> comboFaces = new ArrayList<>();
         posNotCombo = new ArrayList<>();
         for (int i = 0; i < numFace.length; i++){
             if (numFace[i] >= 3){
@@ -178,7 +179,7 @@ public class Strategy {
         log.logMessage(Faces.SABER.name() + " is the combo");
 
         //find the positions that are not Sabers
-        ArrayList<Faces> saberFace = new ArrayList<>();
+        List<Faces> saberFace = new ArrayList<>();
         saberFace.add(Faces.SABER);
         posNotCombo = diceCup.findDiceNotCombo(saberFace);
 

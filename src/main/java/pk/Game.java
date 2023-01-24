@@ -1,14 +1,14 @@
 package pk;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Game {
     Log log = new Log();
     int gameNumber;
-    ArrayList<Player> players;
+    List<Player> players;
     Deck deck;
 
-    public Game(int gameNumber, ArrayList<Player> players){
+    public Game(int gameNumber, List<Player> players){
         this.gameNumber = gameNumber;
         this.players = players;
         deck = new Deck();

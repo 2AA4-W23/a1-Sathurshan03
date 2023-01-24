@@ -1,5 +1,6 @@
 package pk;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class Simulation {
@@ -17,7 +18,7 @@ public class Simulation {
     public void runSimulation()
     {
         //Create the players
-        ArrayList <Player> players = new ArrayList<>();
+        List <Player> players = new ArrayList<>();
         for (int i = 0; i < totPlayers; i++)
         {
             players.add(new Player("player" + (i+1), playersStrategy[i]));

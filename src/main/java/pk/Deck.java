@@ -1,9 +1,12 @@
 package pk;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
+import java.util.Stack;
+import java.util.ArrayList;
 
 public class Deck {
-    ArrayList<Cards> newDeck;
+    List<Cards> newDeck;
     Stack<Cards> deck;
 
     public Deck(){

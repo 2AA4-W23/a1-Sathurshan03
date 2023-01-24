@@ -1,11 +1,15 @@
 package pk;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 
 public class DiceCup {
     //A collection of Dice
     
-    ArrayList <Dice> myDice; 
+    List <Dice> myDice; 
     List <Dice> currentDice; 
     List <Dice> skullDice;
     Log log = new Log();
@@ -34,7 +38,7 @@ public class DiceCup {
         logDice();
     }
 
-    public void reRoll(ArrayList<Integer> pos)
+    public void reRoll(List<Integer> pos)
     {
          //Re-roll the selected pos dice 
          for (Integer index: pos){
@@ -82,10 +86,10 @@ public class DiceCup {
         return numFace;
     }
 
-    public ArrayList<Integer> findDiceNotCombo(ArrayList<Faces> comboFaces)
+    public List<Integer> findDiceNotCombo(List<Faces> comboFaces)
     {
          //Find the positions of dices that are not combo dices
-         ArrayList<Integer> posNotCombo = new ArrayList<>();
+         List<Integer> posNotCombo = new ArrayList<>();
          for (int i = 0; i<getCurrentDiceSize(); i++)
          {
              if(!(comboFaces.contains(currentDice.get(i).rollValue)))

@@ -73,9 +73,13 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F38 | add Sorceress Card to deck | B(F37) |  |  |
 | F39 | Implement New Sorceress Card effect | B(F38) |  |  |
 | F40 | Calculate score for Sorceress Card | B(F39) |  |  |
-| F41 | Create Island of Skulls mode | P |  |  |
-| F42 | Move player to Island of Skulls mode when 4 or more skulls in initial roll | B{F41} |  |  |
-| F43 | Island of Skulls mode ends when less than 1 skull is rolled | B(F42) |  |  |
-| F44 | Deduct points depending on outcome of Islands of Skulls | B(F43) |  |  |
+| F41 | New Tressure Chest Card | P |  |  |
+| F42 | add Tressure Chest Card to deck | B(F41) |  |  |
+| F43 | Implement New Tressure Chest Card effect | B(F42) |  |  |
+| F44 | Calculate score for Tressure Chest Card | B(F43) |  |  |
+| F45 | Create Island of Skulls mode | P |  |  |
+| F46 | Move player to Island of Skulls mode when 4 or more skulls in initial roll | B{F45} |  |  |
+| F47 | Island of Skulls mode ends when less than 1 skull is rolled | B(F45) |  |  |
+| F48 | Deduct points depending on outcome of Islands of Skulls | B(F45) |  |  |
 | ... | ... | ... |
 

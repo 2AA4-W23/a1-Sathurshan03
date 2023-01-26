@@ -163,6 +163,11 @@ public class DiceCup {
         {
             int total;
 
+            //Diamond face count
+            int numDiamonds = card.equals(Cards.DIAMOND) ? countNumFace(Faces.DIAMOND) + 1 : countNumFace(Faces.DIAMOND);
+            //Gold face count
+            int numGold = card.equals(Cards.GOLD) ? countNumFace(Faces.GOLD) + 1 : countNumFace(Faces.GOLD);
+
             //MonkeyBusiness Card
             if (card.equals(Cards.MONKEYBUSINESS))
             {
@@ -176,7 +181,10 @@ public class DiceCup {
             }
             else
             {
-                //Atleast three in a row combo, no spciecal combo card
+                //Atleast three in a row combo
+
+                
+                
                 turnScore += getComboScore(countNumFace(Faces.MONKEY)) + getComboScore(countNumFace(Faces.PARROT)) + getComboScore(countNumFace(Faces.DIAMOND)) + getComboScore(countNumFace(Faces.GOLD)) + getComboScore(countNumFace(Faces.SABER));
             }
 

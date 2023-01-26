@@ -207,6 +207,11 @@ public class DiceCup {
         
         }
 
+        //Tressure Card 
+        if (card.equals(Cards.CAPTAIN)){
+            //double scores
+        }
+
         return turnScore;
     }
     private int getComboScore(int combo)

@@ -63,7 +63,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F28 | Calculate score for Gold and Diamond Card | D | 01/26/23 | 01/26/23 |
 | F29 | New Captain Card | D | 01/24/23 | 01/24/23 |
 | F30 | add Captain Card to deck| D | 01/26/23 | 01/26/23 |
-| F31 | Implement New Captain Card effect | B(F30) |  |  |
+| F31 | Implement New Captain Card effect | D | 01/26/23 | 01/26/23 |
 | F32 | Calculate score for New Captain Card | B(F31) |  |  |
 | F33 | New Skull Card | D | 01/24/23 | 01/24/23 |
 | F34 | add Skull Card to deck| D | 01/26/23 | 01/26/23 |

@@ -26,3 +26,4 @@
 | Jan 21, 2023 | Calculate the new scores with the monkey business card |
 | Jan 24, 2023 | Bonus Step of adding new cards: Gold, Diamond, Caption, Skull, Sorceress |
 | Jan 26, 2023 | Bonus Step of adding new cards: Tressure Chest |
+| Jan 26, 2023 | Bonus Step of adding all new cards to the deck |

@@ -61,8 +61,10 @@ public class DiceCup {
             }
         }
 
+        int numSkull = (card.equals(Cards.SKULL1) || card.equals(Cards.SKULL2)) ? skullDice.size() + card.num: skullDice.size(); 
+
         //check if turn is over by examining the number of skulls
-        if (skullDice.size() >= 3)
+        if (numSkull >= 3)
         {
             log.logMessage("Turn is over! More than 3 skulls were collected.");
             return false;

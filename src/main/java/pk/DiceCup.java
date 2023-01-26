@@ -14,11 +14,13 @@ public class DiceCup {
     List <Dice> skullDice;
     Log log = new Log();
     Cards card;
+    int numSkull;
 
     public DiceCup(Cards card){
         myDice = new ArrayList<>();
         currentDice = new ArrayList<>();
         skullDice = new ArrayList<>();
+        numSkull = 0;
         this.card = card;
     }
 
@@ -61,7 +63,7 @@ public class DiceCup {
             }
         }
 
-        int numSkull = (card.equals(Cards.SKULL1) || card.equals(Cards.SKULL2)) ? skullDice.size() + card.num: skullDice.size(); 
+        numSkull = (card.equals(Cards.SKULL1) || card.equals(Cards.SKULL2)) ? skullDice.size() + card.num: skullDice.size(); 
 
         //check if turn is over by examining the number of skulls
         if (numSkull >= 3)
@@ -161,7 +163,7 @@ public class DiceCup {
         int turnScore = 0;
 
         //Calculate the player's score at the end of their turn
-        if (skullDice.size() < 3 )
+        if (numSkull < 3 )
         {
             int total;
 

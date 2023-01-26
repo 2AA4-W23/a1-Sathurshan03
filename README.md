@@ -68,7 +68,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F33 | New Skull Card | D | 01/24/23 | 01/24/23 |
 | F34 | add Skull Card to deck| D | 01/26/23 | 01/26/23 |
 | F35 | Implement New Skull Card effect | D | 01/26/23 | 01/26/23 |
-| F36 | Calculate score for Skull Card | B(F35) |  |  |
+| F36 | Calculate score if player has Skull Card | D | 01/26/23 | 01/26/23 |
 | F37 | New Sorceress Card | D | 01/24/23 | 01/24/23 |
 | F38 | add Sorceress Card to deck | D | 01/26/23 | 01/26/23 |
 | F39 | Implement New Sorceress Card effect | B(F38) |  |  |

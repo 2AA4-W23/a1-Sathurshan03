@@ -71,11 +71,11 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F36 | Calculate score if player has Skull Card | D | 01/26/23 | 01/26/23 |
 | F37 | New Sorceress Card | D | 01/24/23 | 01/24/23 |
 | F38 | add Sorceress Card to deck | D | 01/26/23 | 01/26/23 |
-| F39 | Implement New Sorceress Card effect | B(F38) |  |  |
+| F39 | Implement New Sorceress Card effect | P |  |  |
 | F40 | Calculate score for Sorceress Card | B(F39) |  |  |
 | F41 | New Tressure Chest Card | D | 01/26/23 | 01/26/23 |
 | F42 | add Tressure Chest Card to deck | D | 01/26/23 | 01/26/23 |
-| F43 | Implement New Tressure Chest Card effect | B(F42) |  |  |
+| F43 | Implement New Tressure Chest Card effect | P |  |  |
 | F44 | Calculate score for Tressure Chest Card | B(F43) |  |  |
 | F45 | Create Island of Skulls mode | P |  |  |
 | F46 | Move player to Island of Skulls mode when 4 or more skulls in initial roll | B(F45) |  |  |

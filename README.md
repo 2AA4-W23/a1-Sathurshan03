@@ -74,7 +74,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F39 | Implement New Sorceress Card effect | B(F38) |  |  |
 | F40 | Calculate score for Sorceress Card | B(F39) |  |  |
 | F41 | New Tressure Chest Card | D | 01/26/23 | 01/26/23 |
-| F42 | add Tressure Chest Card to deck | B(F41) |  |  |
+| F42 | add Tressure Chest Card to deck | D | 01/26/23 | 01/26/23 |
 | F43 | Implement New Tressure Chest Card effect | B(F42) |  |  |
 | F44 | Calculate score for Tressure Chest Card | B(F43) |  |  |
 | F45 | Create Island of Skulls mode | P |  |  |

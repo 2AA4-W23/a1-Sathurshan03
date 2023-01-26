@@ -177,7 +177,7 @@ public class DiceCup {
                 
                 
                 //check if the other faces have combos
-                turnScore += getComboScore(countNumFace(Faces.DIAMOND)) + getComboScore(countNumFace(Faces.GOLD)) + getComboScore(countNumFace(Faces.SABER));
+                turnScore += getComboScore(numDiamonds) + getComboScore(numGold) + getComboScore(countNumFace(Faces.SABER));
             }
             else
             {
@@ -185,11 +185,11 @@ public class DiceCup {
 
                 
                 
-                turnScore += getComboScore(countNumFace(Faces.MONKEY)) + getComboScore(countNumFace(Faces.PARROT)) + getComboScore(countNumFace(Faces.DIAMOND)) + getComboScore(countNumFace(Faces.GOLD)) + getComboScore(countNumFace(Faces.SABER));
+                turnScore += getComboScore(countNumFace(Faces.MONKEY)) + getComboScore(countNumFace(Faces.PARROT)) + getComboScore(numDiamonds) + getComboScore(numGold) + getComboScore(countNumFace(Faces.SABER));
             }
 
             //Reward points for rolling diamond and gold coins
-            turnScore += (countNumFace(Faces.DIAMOND) * 100 + countNumFace(Faces.GOLD) * 100);
+            turnScore += (numDiamonds * 100 + numGold * 100);
         }
 
         //Sea of battle points

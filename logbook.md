@@ -1,5 +1,7 @@
 # Logbook
+
 | Date | Description  |
+|:-:  | ---       | 
 | Jan 10, 2023 | Created a logbook to keep track of the work done for the project |
 | Jan 12, 2023 | Completed Step 1 questions in a report and submitted to Avenue |
 | Jan 12, 2023 | Implemented the new Business logic stated in Step 2 alongside with the MVP |
@@ -22,4 +24,4 @@
 | Jan 21, 2023 | Updated the Backlog with the new business logic |
 | Jan 21, 2023 | Created a monkey business card and implemented its effect |
 | Jan 21, 2023 | Calculate the new scores with the monkey business card |
-| Jan 24, 2023 | Bonus Step of adding new cards and its effects: Gold, Diamond, Caption, Skull |
+| Jan 24, 2023 | Bonus Step of adding new cards: Gold, Diamond, Caption, Skull, Sorceress |

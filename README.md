@@ -78,7 +78,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | F43 | Implement New Tressure Chest Card effect | B(F42) |  |  |
 | F44 | Calculate score for Tressure Chest Card | B(F43) |  |  |
 | F45 | Create Island of Skulls mode | P |  |  |
-| F46 | Move player to Island of Skulls mode when 4 or more skulls in initial roll | B{F45} |  |  |
+| F46 | Move player to Island of Skulls mode when 4 or more skulls in initial roll | B(F45) |  |  |
 | F47 | Island of Skulls mode ends when less than 1 skull is rolled | B(F45) |  |  |
 | F48 | Deduct points depending on outcome of Islands of Skulls | B(F45) |  |  |
 | ... | ... | ... |

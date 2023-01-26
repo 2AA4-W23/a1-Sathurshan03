@@ -11,8 +11,7 @@ public enum Cards {
     SKULL1(1,0,"Skull 1"),
     SKULL2(2,0,"Skull 2"),
     SORCERESS(0,0,"Sorceress"),
-    TRESSURECHEST(0,0, "Tressure Chest"),
-    NOP(0,0, "Empty Card");
+    TRESSURECHEST(0,0, "Tressure Chest");
 
     public final int num; //represents a number depending on the card
     public final int points; //represent the points for the card

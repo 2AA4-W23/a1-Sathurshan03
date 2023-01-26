@@ -24,11 +24,12 @@ public class Deck {
             newDeck.add(Cards.SEABATTLE5);
         }
 
-        //create 4 monkey business, Gold, and diamond cards
+        //create 4 monkey business, Gold, diamond, and captain cards
         for(int i = 0; i < 4; i++){
             newDeck.add(Cards.MONKEYBUSINESS);
             newDeck.add(Cards.GOLD);
             newDeck.add(Cards.DIAMOND);
+            newDeck.add(Cards.CAPTAIN);
         }
 
         //create 25 NOP cards

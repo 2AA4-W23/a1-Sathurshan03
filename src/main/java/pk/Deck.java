@@ -32,6 +32,15 @@ public class Deck {
             newDeck.add(Cards.CAPTAIN);
         }
 
+        //Create 2 skulls 2 cards
+        newDeck.add(Cards.SKULL2);
+        newDeck.add(Cards.SKULL2);
+
+        //create 3 skulls 1 cards
+        newDeck.add(Cards.SKULL1);
+        newDeck.add(Cards.SKULL1);
+        newDeck.add(Cards.SKULL1);
+
         //create 25 NOP cards
         for(int i = 0; i < 25; i++){
             newDeck.add(Cards.NOP);

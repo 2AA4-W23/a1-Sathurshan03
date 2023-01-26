@@ -210,6 +210,7 @@ public class DiceCup {
         //Tressure Card 
         if (card.equals(Cards.CAPTAIN)){
             //double scores
+            turnScore *= 2;
         }
 
         return turnScore;
